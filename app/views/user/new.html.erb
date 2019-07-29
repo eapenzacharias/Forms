@@ -1,4 +1,9 @@
 <%= form_for @user, url: {action: "create"} do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
   <%= f.label :username, "Username:" %>
   <%= f.text_field :username %><br/>
   <%= f.label :email, "Email:" %>
